@@ -32,6 +32,7 @@ namespace CRUDSeries
             ret += "Title: " + Title + Environment.NewLine;
             ret += "Description: " + Description + Environment.NewLine;
             ret += "Year: " + Year + Environment.NewLine;
+            if (IsDeleted == true) ret += "REMOVED";
             return ret;
         }
 
@@ -48,6 +49,11 @@ namespace CRUDSeries
         public void Remove()
         {
             IsDeleted = true;
+        }
+
+        public bool ReturnRemoveStatus()
+        {
+            return IsDeleted;
         }
     }
 }
